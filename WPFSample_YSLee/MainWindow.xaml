@@ -5,28 +5,58 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFSample_YSLee"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="800" Width="800">
 
-    
+
     <Grid Margin="10">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" MinHeight="15" />
+            <RowDefinition Height="349*" />
+            <RowDefinition Height="348*" />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Label>Names</Label>
-        <ListBox Grid.Row="1" x:Name="lstNames" />
+        <Label Content="List of items for sale">
+            <Label.Style>
+                <Style TargetType="Label">
+                    <Setter Property="Foreground" Value="Purple"/>
+                    <Setter Property="FontSize" Value="20"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Style>
+            </Label.Style>
+        </Label>
 
-        <StackPanel Grid.Row="1" Grid.Column="1" Margin="5,0,0,0">
-            <TextBox x:Name="txtName" />
-            <Button x:Name="btnAdd" Margin="0,5,0,0" Click="ButtonAddName_Click">Add Name</Button>
-        </StackPanel>
+        <CheckBox Content="Group by cetegory" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Width="123" />
+        <CheckBox Content="Show only bargains" Grid.Row="1" HorizontalAlignment="Center" Margin="306,0" Width="128" />
+        <CheckBox Content="Sort by category and date" Grid.Row="1" HorizontalAlignment="Right" Width="164" />
+
+        <ListBox Grid.Row="2" Margin="0,10,0,0" x:Name="lstNames" />
+
+
+        <Grid Grid.Row="3" Margin="0,0,0,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Margin="0,5,0,0">
+
+            </StackPanel>
+            
+            <ListBox Grid.Column="1" Margin="100,5,0,0">
+
+            </ListBox>
+        </Grid>
+   
+        <Button Grid.Row="4" x:Name="btnAdd" VerticalAlignment="Bottom"  Click="ButtonAddName_Click" Content="Add Product"/>
 
     </Grid>
 </Window>
