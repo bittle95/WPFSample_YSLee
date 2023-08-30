@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WPFSample_YSLee
 {
     /// <summary>
-    /// MainWindow.xaml에 대한 상호 작용 논리
+    /// AddProductListingView.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddProductListingView : Window
     {
-        public MainWindow()
+        public AddProductListingView()
         {
             InitializeComponent();
-        }
-
-        private void NavigateToNewPage_Click(object sender, RoutedEventArgs e)
-        {
-            AddProductListingView addProductListView = new AddProductListingView();
-            addProductListView.Show();
         }
     }
 }

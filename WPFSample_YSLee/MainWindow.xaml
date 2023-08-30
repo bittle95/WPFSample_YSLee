@@ -7,16 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="800">
 
-
     <Grid Margin="10">
-
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" MinHeight="15" />
             <RowDefinition Height="349*" />
             <RowDefinition Height="348*" />
         </Grid.RowDefinitions>
-
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
@@ -43,20 +40,20 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Column="0" Margin="0,5,0,0">
 
             </StackPanel>
-            
-            <ListBox Grid.Column="1" Margin="100,5,0,0">
+
+            <ListBox Grid.Column="1" Margin="0,5,0,0">
 
             </ListBox>
         </Grid>
-   
-        <Button Grid.Row="4" x:Name="btnAdd" VerticalAlignment="Bottom"  Click="ButtonAddName_Click" Content="Add Product"/>
+
+        <Button Grid.Row="4" x:Name="btnAdd" VerticalAlignment="Bottom"  Click="NavigateToNewPage_Click" Content="Add Product"/>
 
     </Grid>
 </Window>

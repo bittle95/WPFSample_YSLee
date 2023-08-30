@@ -28,3 +28,5 @@ C:\Personal\WPFSample_YSLee\WPFSample_YSLee\obj\Debug\WPFSample_YSLee.csproj.Gen
 C:\Personal\WPFSample_YSLee\WPFSample_YSLee\obj\Debug\WPFSample_YSLee.csproj.CoreCompileInputs.cache
 C:\Personal\WPFSample_YSLee\WPFSample_YSLee\obj\Debug\WPFSample_YSLee.exe
 C:\Personal\WPFSample_YSLee\WPFSample_YSLee\obj\Debug\WPFSample_YSLee.pdb
+C:\Personal\WPFSample_YSLee\WPFSample_YSLee\obj\Debug\AddProductListingView.g.cs
+C:\Personal\WPFSample_YSLee\WPFSample_YSLee\obj\Debug\AddProductListingView.baml
