@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFSample_YSLee"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="800">
+        Title="MainWindow" Height="800" Width="600"
+        ResizeMode="NoResize">
 
     <Grid Margin="10">
         <Grid.RowDefinitions>
@@ -21,39 +22,59 @@
         <Label Content="List of items for sale">
             <Label.Style>
                 <Style TargetType="Label">
-                    <Setter Property="Foreground" Value="Purple"/>
+                    <Setter Property="Foreground" Value="MediumPurple"/>
                     <Setter Property="FontSize" Value="20"/>
                     <Setter Property="FontWeight" Value="Bold"/>
                 </Style>
             </Label.Style>
         </Label>
 
-        <CheckBox Content="Group by cetegory" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Width="123" />
-        <CheckBox Content="Show only bargains" Grid.Row="1" HorizontalAlignment="Center" Margin="306,0" Width="128" />
-        <CheckBox Content="Sort by category and date" Grid.Row="1" HorizontalAlignment="Right" Width="164" />
+        <CheckBox Content="Group by cetegory" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Width="163" FontWeight="Bold"/>
+        <CheckBox Content="Show only bargains" Grid.Row="1" HorizontalAlignment="Center" Margin="200,0,196,0" Width="178" FontWeight="Bold"/>
+        <CheckBox Content="Sort by category and date" Grid.Row="1" HorizontalAlignment="Right" Width="192" FontWeight="Bold"/>
 
         <ListBox Grid.Row="2" Margin="0,10,0,0" x:Name="lstNames" />
 
 
+
         <Grid Grid.Row="3" Margin="0,0,0,20">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*" />
                 <ColumnDefinition Width="2*" />
-                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="2*" />
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Column="0" Margin="0,5,0,0">
-
+                <StackPanel.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="HorizontalAlignment" Value="Right" />
+                    </Style>
+                </StackPanel.Resources>
+                <TextBlock Text="Description :" Grid.Column="1" Margin="15"  FontWeight="Bold"/>
+                <TextBlock Text="Start Price :"      Grid.Column="1" Margin="15"  FontWeight="Bold"/>
+                <TextBlock Text="Start Date :"       Grid.Column="1" Margin="15"  FontWeight="Bold"/>
+                <TextBlock Text="Category :"         Grid.Column="1" Margin="15"  FontWeight="Bold"/>
+                <TextBlock Text="Special Features :" Grid.Column="1" Margin="15"  FontWeight="Bold"/>
+                <TextBlock Text="Check bargain :"    Grid.Column="1" Margin="15"  FontWeight="Bold"/>
             </StackPanel>
 
-            <ListBox Grid.Column="1" Margin="0,5,0,0">
+            <StackPanel Grid.Column="1" Margin="0,5,0,0">
+                <TextBlock Margin="0,15,0,13" Height="18"></TextBlock>
+                <TextBlock Margin="0,15,0,13" Height="18"></TextBlock>
+                <TextBlock Margin="0,15,0,13" Height="18"></TextBlock>
+                <TextBlock Margin="0,15,0,13" Height="18"></TextBlock>
+                <TextBlock Margin="0,15,0,13" Height="18"></TextBlock>
+                <TextBlock Margin="0,15,0,13" Height="18"></TextBlock>
+            </StackPanel>
+            <ListBox Grid.Column="2" Margin="10,5,0,-36">
 
             </ListBox>
         </Grid>
 
-        <Button Grid.Row="4" x:Name="btnAdd" VerticalAlignment="Bottom"  Click="NavigateToNewPage_Click" Content="Add Product"/>
 
+        <Button Grid.Row="4" x:Name="btnAdd" VerticalAlignment="Bottom"  Click="NavigateToNewPage_Click" Content="Add Product" Width="100" FontWeight="Bold"/>
     </Grid>
 </Window>

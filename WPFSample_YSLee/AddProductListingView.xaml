@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFSample_YSLee"
         mc:Ignorable="d"
-        Title="AddProductListingView" Height="600" Width="400">
+        Title="AddProductListingView" Height="600" Width="400"
+        ResizeMode="NoResize">
 
     <Grid Margin="10">
         <Grid.RowDefinitions>
@@ -22,8 +23,8 @@
         <Label Content="Items for sale :">
             <Label.Style>
                 <Style TargetType="Label">
-                    <Setter Property="Foreground" Value="Purple"/>
-                    <Setter Property="FontSize" Value="20"/>
+                    <Setter Property="Foreground" Value="MediumPurple"/>
+                    <Setter Property="FontSize"   Value="20"/>
                     <Setter Property="FontWeight" Value="Bold"/>
                 </Style>
             </Label.Style>
@@ -44,52 +45,55 @@
                         <Setter Property="HorizontalAlignment" Value="Right" />
                     </Style>
                 </StackPanel.Resources>
-                <TextBlock Text="Item Description :" Grid.Column="1" Margin="5" />
-                <TextBlock Text="Start Price :"      Grid.Column="1" Margin="5" />
-                <TextBlock Text="Start Date :"       Grid.Column="1" Margin="5" />
-                <TextBlock Text="Category :"         Grid.Column="1" Margin="5" />
-                <TextBlock Text="Special Features :" Grid.Column="1" Margin="5" />
-                <TextBlock Text="Check bargain :"    Grid.Column="1" Margin="5" />
+                <TextBlock Text="Item Description :" Grid.Column="1" Margin="5"  FontWeight="Bold"/>
+                <TextBlock Text="Start Price :"      Grid.Column="1" Margin="5"  FontWeight="Bold"/>
+                <TextBlock Text="Start Date :"       Grid.Column="1" Margin="5"  FontWeight="Bold"/>
+                <TextBlock Text="Category :"         Grid.Column="1" Margin="5"  FontWeight="Bold"/>
+                <TextBlock Text="Special Features :" Grid.Column="1" Margin="5"  FontWeight="Bold"/>
+                <TextBlock Text="Check bargain :"    Grid.Column="1" Margin="5"  FontWeight="Bold"/>
             </StackPanel>
 
             <StackPanel Grid.Column="1" Margin="0,5,0,0">
                 <TextBox Margin="0,5,0,4.5"></TextBox>
                 <TextBox Margin="0,4,0,4"></TextBox>
                 <TextBox Margin="0,4,0,4"></TextBox>
-                <TextBox Margin="0,4,0,4"></TextBox>
-                <TextBox Margin="0,4,0,4"></TextBox>
+                <ComboBox Margin="0,4,0,4" Height="18"></ComboBox>
+                <ComboBox Margin="0,4,0,4" Height="18"></ComboBox>
                 <CheckBox Margin="0,4,0,4"></CheckBox>
-                <Button Margin="188,4,0,4" Content="Submit" Height="35"></Button>
+                <Button Margin="188,4,0,4" Content="Submit" Height="35"  FontWeight="Bold"></Button>
             </StackPanel>
         </Grid>
 
         <!-- 굵은 선 -->
-        <Border Grid.Row="1" BorderThickness="0,0,0,3" BorderBrush="Black" Margin="0,5,0,68" Grid.RowSpan="2" />
+        <Border Grid.Row="1" BorderThickness="0,0,0,3" BorderBrush="Black" Margin="0,5,0,80" Grid.RowSpan="2" />
 
+        <Border Grid.Row="2" BorderBrush="Black" BorderThickness="1">
 
-        <Grid Grid.Row="2" Margin="0,0,0,20">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="2*" />
-            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="2" Margin="0,0,0,-1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Column="0" Margin="0,5,0,0">
-                <StackPanel.Resources>
-                    <Style TargetType="TextBlock">
-                        <Setter Property="HorizontalAlignment" Value="Right" />
-                    </Style>
-                </StackPanel.Resources>
-                <TextBlock Text="Item Description :" Grid.Column="1" Margin="5" />
-                <TextBlock Text="Current Price :"      Grid.Column="1" Margin="5" />
-            </StackPanel>
+                <StackPanel Grid.Column="0" Margin="0,5,0,0">
+                    <StackPanel.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Right" />
+                        </Style>
+                    </StackPanel.Resources>
+                    <TextBlock Text="Description :" Grid.Column="1" Margin="5"  FontWeight="Bold"/>
+                    <TextBlock Text="Current Price :" Grid.Column="1" Margin="5"  FontWeight="Bold"/>
+                </StackPanel>
 
-            <StackPanel Grid.Column="1" Margin="0,5,0,0">
-
-            </StackPanel>
-        </Grid>
+                <StackPanel Grid.Column="1" Margin="0,5,0,0">
+                    <TextBlock Margin="0,5,0,3" Height="18"></TextBlock>
+                    <TextBlock Margin="0,5,0,3" Height="18"></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Border>
 
         <Grid Grid.Row="3" Margin="0,0,0,20">
             <Grid.RowDefinitions>
@@ -106,16 +110,21 @@
                         <Setter Property="HorizontalAlignment" Value="Right" />
                     </Style>
                 </StackPanel.Resources>
-                <TextBlock Text="Item Description :" Grid.Column="1" Margin="5" />
-                <TextBlock Text="Start Price :"      Grid.Column="1" Margin="5" />
-                <TextBlock Text="Start Date :"       Grid.Column="1" Margin="5" />
-                <TextBlock Text="Category :"         Grid.Column="1" Margin="5" />
-                <TextBlock Text="Owner's name :"     Grid.Column="1" Margin="5" />
-                <TextBlock Text="Owner's rating :"   Grid.Column="1" Margin="5" />
+                <TextBlock Text="Description :"      Grid.Column="1" Margin="5"  FontWeight="Bold"/>
+                <TextBlock Text="Start Price :"      Grid.Column="1" Margin="5"  FontWeight="Bold"/>
+                <TextBlock Text="Start Date :"       Grid.Column="1" Margin="5"  FontWeight="Bold"/>
+                <TextBlock Text="Category :"         Grid.Column="1" Margin="5"  FontWeight="Bold"/>
+                <TextBlock Text="Owner's name :"     Grid.Column="1" Margin="5"  FontWeight="Bold"/>
+                <TextBlock Text="Owner's rating :"   Grid.Column="1" Margin="5"  FontWeight="Bold"/>
             </StackPanel>
 
             <StackPanel Grid.Column="1" Margin="0,5,0,0">
-
+                <TextBlock Margin="0,5,0,3" Height="18"></TextBlock>
+                <TextBlock Margin="0,5,0,3" Height="18"></TextBlock>
+                <TextBlock Margin="0,5,0,3" Height="18"></TextBlock>
+                <TextBlock Margin="0,5,0,3" Height="18"></TextBlock>
+                <TextBlock Margin="0,5,0,3" Height="18"></TextBlock>
+                <TextBlock Margin="0,5,0,3" Height="18"></TextBlock>
             </StackPanel>
         </Grid>
 
