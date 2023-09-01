@@ -10,7 +10,7 @@ namespace WPFSample_YSLee.Model
     class ViewModel_Test : Notifier_Test
     {
         string discription  = string.Empty;
-        string startPrice   = string.Empty; bool isPriceErr = false;
+        string startPrice   = string.Empty; 
         string startDate    = string.Empty;
 
         public string Discription
@@ -19,7 +19,6 @@ namespace WPFSample_YSLee.Model
             set
             {
                 discription = value;
-                //
                 NotifyChanged("Discription");
             }
         }
@@ -29,7 +28,6 @@ namespace WPFSample_YSLee.Model
             set
             {
                 startDate = value;
-                //
                 NotifyChanged("StartDate");
             }
         }
