@@ -42,32 +42,14 @@ namespace WPFSample_YSLee.Model
                 if (Regex.IsMatch(value, "^[0-9]*$"))
                 {
                     startPrice = value;
-                    isPriceErr = false;
+                    Console.WriteLine("False");
                 }
                 else
                 {
                     startPrice = value;
-                    isPriceErr = true;
+                    Console.WriteLine("True");
                 }
                 NotifyChanged("StartPrice");
-            }
-        }
-        public bool PriceErr
-        {
-            get
-            {
-                return isPriceErr;
-            }
-        }
-        public string PriceErrMsg
-        {
-            get
-            {
-                if (isPriceErr == false)                //아무것도 안함
-                { return ""; }
-
-                else                                    //박스 벌겋게
-                { return ""; }
             }
         }
     }
