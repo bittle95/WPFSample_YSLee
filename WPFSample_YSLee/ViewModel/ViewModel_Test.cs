@@ -10,7 +10,7 @@ namespace WPFSample_YSLee.Model
     class ViewModel_Test : Notifier_Test
     {
         string discription  = string.Empty;
-        string startPrice   = string.Empty; 
+        string startPrice   = string.Empty;
         string startDate    = string.Empty;
 
         public string Discription
@@ -40,11 +40,9 @@ namespace WPFSample_YSLee.Model
                 if (Regex.IsMatch(value, "^[0-9]*$"))
                 {
                     startPrice = value;
-                    Console.WriteLine("False");
                 }
                 else
                 {
-                    startPrice = value;
                     Console.WriteLine("True");
                 }
                 NotifyChanged("StartPrice");
