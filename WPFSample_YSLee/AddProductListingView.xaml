@@ -54,9 +54,9 @@
             </StackPanel>
 
             <StackPanel Grid.Column="1" Margin="0,5,0,0">
-                <TextBox Margin="0,5,0,4.5"></TextBox>
-                <TextBox Margin="0,4,0,4"></TextBox>
-                <TextBox Margin="0,4,0,4"></TextBox>
+                <TextBox Text="{Binding Discription, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,4.5"></TextBox>
+                <TextBox Text="{Binding StartPrice, UpdateSourceTrigger=PropertyChanged}" Margin="0,4,0,4"></TextBox>
+                <TextBox Text="{Binding StartDate, UpdateSourceTrigger=PropertyChanged}" Margin="0,4,0,4"></TextBox>
                 <ComboBox Margin="0,4,0,4" Height="18"></ComboBox>
                 <ComboBox Margin="0,4,0,4" Height="18"></ComboBox>
                 <CheckBox Margin="0,4,0,4"></CheckBox>
@@ -119,15 +119,14 @@
             </StackPanel>
 
             <StackPanel Grid.Column="1" Margin="0,5,0,0">
-                <TextBlock Margin="0,5,0,3" Height="18"></TextBlock>
-                <TextBlock Margin="0,5,0,3" Height="18"></TextBlock>
-                <TextBlock Margin="0,5,0,3" Height="18"></TextBlock>
+                <TextBlock Text="{Binding Discription, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,3" Height="18"></TextBlock>
+                <TextBlock Text="{Binding StartPrice, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,3" Height="18"></TextBlock>
+                <TextBlock Text="{Binding StartDate, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,3" Height="18"></TextBlock>
                 <TextBlock Margin="0,5,0,3" Height="18"></TextBlock>
                 <TextBlock Margin="0,5,0,3" Height="18"></TextBlock>
                 <TextBlock Margin="0,5,0,3" Height="18"></TextBlock>
             </StackPanel>
         </Grid>
-
     </Grid>
 
 </Window>

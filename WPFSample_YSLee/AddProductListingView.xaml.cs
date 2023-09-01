@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WPFSample_YSLee.Model;
 
 namespace WPFSample_YSLee
 {
@@ -22,6 +23,7 @@ namespace WPFSample_YSLee
         public AddProductListingView()
         {
             InitializeComponent();
+            this.DataContext = new ViewModel_Test();
         }
     }
 }
