@@ -113,8 +113,8 @@
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Margin="0,5,0,0">
-                    <TextBlock Margin="0,5,0,3" Height="18"></TextBlock>
-                    <TextBlock Margin="0,5,0,3" Height="18"></TextBlock>
+                    <TextBlock Text="{Binding Discription, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,3" Height="18"></TextBlock>
+                    <TextBlock Text="{Binding StartPrice, UpdateSourceTrigger=PropertyChanged}"  Margin="0,5,0,3" Height="18"></TextBlock>
                 </StackPanel>
             </Grid>
         </Border>
