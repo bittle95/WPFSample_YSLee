@@ -27,6 +27,10 @@ namespace WPFSample_YSLee
 
         private void NavigateToNewPage_Click(object sender, RoutedEventArgs e)
         {
+            if (Application.Current.Windows.OfType<AddProductListingView>().Any())
+            {
+                return; //여러 창이 Open 되는 것을 방지
+            }
             AddProductListingView addProductListView = new AddProductListingView();
             addProductListView.Show();
         }
