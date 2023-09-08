@@ -45,20 +45,35 @@
                         <Setter Property="HorizontalAlignment" Value="Right" />
                     </Style>
                 </StackPanel.Resources>
-                <TextBlock Text="Item Description :" Grid.Column="1" Margin="5"  FontWeight="Bold"/>
-                <TextBlock Text="Start Price :"      Grid.Column="1" Margin="5"  FontWeight="Bold"/>
-                <TextBlock Text="Start Date :"       Grid.Column="1" Margin="5"  FontWeight="Bold"/>
-                <TextBlock Text="Category :"         Grid.Column="1" Margin="5"  FontWeight="Bold"/>
-                <TextBlock Text="Special Features :" Grid.Column="1" Margin="5"  FontWeight="Bold"/>
-                <TextBlock Text="Check bargain :"    Grid.Column="1" Margin="5"  FontWeight="Bold"/>
+                <TextBlock Text="Item Description :"  Grid.Column="1" Margin="5"  FontWeight="Bold"/>
+                <TextBlock Text="Start Price :"       Grid.Column="1" Margin="5"  FontWeight="Bold"/>
+                <TextBlock Text="Start Date :"        Grid.Column="1" Margin="5"  FontWeight="Bold"/>
+                <TextBlock Text="Category :"          Grid.Column="1" Margin="5"  FontWeight="Bold"/>
+                <TextBlock Text="Special Features :"  Grid.Column="1" Margin="5"  FontWeight="Bold"/>
+                <TextBlock Text="Check bargain :"     Grid.Column="1" Margin="5"  FontWeight="Bold"/>
             </StackPanel>
 
             <StackPanel Grid.Column="1" Margin="0,5,0,0">
                 <TextBox Text="{Binding Discription, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,4.5"></TextBox>
                 <TextBox Text="{Binding StartPrice, UpdateSourceTrigger=PropertyChanged}" Margin="0,4,0,4"></TextBox>
                 <TextBox Text="{Binding StartDate, UpdateSourceTrigger=PropertyChanged}" Margin="0,4,0,4"></TextBox>
-                <ComboBox Margin="0,4,0,4" Height="18"></ComboBox>
-                <ComboBox Margin="0,4,0,4" Height="18"></ComboBox>
+                <ComboBox Text="{Binding Category, UpdateSourceTrigger=PropertyChanged}" Margin="0,4,0,4" Height="18">
+                    <ComboBoxItem>DVS's</ComboBoxItem>
+                    <ComboBoxItem>Computers</ComboBoxItem>
+                    <ComboBoxItem>Electronics</ComboBoxItem>
+                    <ComboBoxItem>Home</ComboBoxItem>
+                    <ComboBoxItem>Sports</ComboBoxItem>
+                    <ComboBoxItem>Books</ComboBoxItem>
+                </ComboBox>
+
+                <ComboBox x:Name="ColorComboBox" 
+                          SelectionChanged="ColorComboBox_SelectionChanged"
+                          Text="{Binding Special_Feature, UpdateSourceTrigger=PropertyChanged}" 
+                          Margin="0,4,0,4" Height="18">
+                    <ComboBoxItem>None</ComboBoxItem>
+                    <ComboBoxItem>Color</ComboBoxItem>
+                    <ComboBoxItem>Highlight</ComboBoxItem>
+                </ComboBox>
                 <CheckBox Margin="0,4,0,4"></CheckBox>
                 <Button Margin="188,4,0,4" Content="Submit" Height="35"  FontWeight="Bold"></Button>
             </StackPanel>
@@ -67,7 +82,16 @@
         <!-- 굵은 선 -->
         <Border Grid.Row="1" BorderThickness="0,0,0,3" BorderBrush="Black" Margin="0,5,0,80" Grid.RowSpan="2" />
 
-        <Border Grid.Row="2" BorderBrush="Black" BorderThickness="1">
+        <Border x:Name="TargetBorderName" Grid.Row="2" BorderBrush="Black" BorderThickness="1">
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=ColorComboBox}"></DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=ColorComboBox}"></DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=ColorComboBox}"></DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
 
             <Grid Grid.Row="2" Margin="0,0,0,-1">
                 <Grid.RowDefinitions>
@@ -120,19 +144,9 @@
 
             <StackPanel Grid.Column="1" Margin="0,5,0,0">
                 <TextBlock Text="{Binding Discription, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,3" Height="18"></TextBlock>
-                <TextBlock Text="{Binding StartPrice, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,3" Height="18">
-                    <!--<TextBlock.Style>
-                        <Style TargetType="TextBlock">
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding IsStartPriceValid}" Value="False">
-                                    <Setter Property="Foreground" Value="Red"/>
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </TextBlock.Style>-->
-                </TextBlock>
+                <TextBlock Text="{Binding StartPrice, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,3" Height="18"> </TextBlock>
                 <TextBlock Text="{Binding StartDate, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,3" Height="18"></TextBlock>
-                <TextBlock Margin="0,5,0,3" Height="18"></TextBlock>
+                <TextBlock Text="{Binding Category, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,3" Height="18"></TextBlock>
                 <TextBlock Margin="0,5,0,3" Height="18"></TextBlock>
                 <TextBlock Margin="0,5,0,3" Height="18"></TextBlock>
             </StackPanel>

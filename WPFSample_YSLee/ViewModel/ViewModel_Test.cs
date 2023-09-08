@@ -9,9 +9,11 @@ namespace WPFSample_YSLee.Model
 {
     class ViewModel_Test : Notifier_Test
     {
-        string discription  = string.Empty;
-        string startPrice   = string.Empty;
-        string startDate    = string.Empty;
+        string discription  = "Please enter a description";
+        double startPrice   = 100;
+        string startDate    = DateTime.Now.ToString("yyyy-MM-dd");
+        string category     = "DVS's";
+        string special_Features= "None";
 
         public string Discription
         {
@@ -32,12 +34,12 @@ namespace WPFSample_YSLee.Model
             }
         }
 
-        public string StartPrice
+        public double StartPrice
         {
             get { return startPrice; }
             set
             {
-                if (Regex.IsMatch(value, "^[0-9]*$"))
+                if (Regex.IsMatch(value.ToString(), "^[0-9]*$"))
                 {
                     startPrice = value;
                 }
@@ -46,6 +48,26 @@ namespace WPFSample_YSLee.Model
                     Console.WriteLine("True");
                 }
                 NotifyChanged("StartPrice");
+            }
+        }
+
+        public string Category
+        {
+            get { return category; }
+            set
+            {
+                category = value;
+                NotifyChanged("Category");
+            }
+        }
+
+        public string Special_Feature
+        {
+            get { return special_Features; }
+            set
+            {
+                special_Features = value;
+                NotifyChanged("Special_Feature");
             }
         }
     }

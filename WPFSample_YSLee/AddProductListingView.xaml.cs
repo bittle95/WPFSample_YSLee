@@ -25,5 +25,33 @@ namespace WPFSample_YSLee
             InitializeComponent();
             this.DataContext = new ViewModel_Test();
         }
+
+        private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBoxItem selectedItem = (ComboBoxItem)ColorComboBox.SelectedItem;
+
+            if (selectedItem != null)
+            {
+                string selectedValue = selectedItem.Content.ToString();
+
+                switch (selectedValue)
+                {
+                    case "None":
+                        TargetBorderName.BorderBrush = Brushes.Black;
+                        TargetBorderName.BorderThickness = new Thickness(1);
+                        break;
+                    case "Color":
+                        TargetBorderName.BorderBrush = Brushes.LightSkyBlue;
+                        TargetBorderName.BorderThickness = new Thickness(3);
+                        break;
+                    case "Highlight":
+                        TargetBorderName.BorderBrush = Brushes.Orange;
+                        TargetBorderName.BorderThickness = new Thickness(3);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
     }
 }
