@@ -75,7 +75,7 @@
                     <ComboBoxItem>Highlight</ComboBoxItem>
                 </ComboBox>
                 <CheckBox Margin="0,4,0,4"></CheckBox>
-                <Button Margin="188,4,0,4" Content="Submit" Height="35"  FontWeight="Bold"></Button>
+                <Button Content="Submit" Click="SubmitButton_Click" Height="35"  FontWeight="Bold" Margin="188,4,0,4"></Button>
             </StackPanel>
         </Grid>
 

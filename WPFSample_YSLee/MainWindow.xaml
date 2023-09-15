@@ -33,8 +33,23 @@
         <CheckBox Content="Show only bargains" Grid.Row="1" HorizontalAlignment="Center" Margin="200,0,196,0" Width="178" FontWeight="Bold"/>
         <CheckBox Content="Sort by category and date" Grid.Row="1" HorizontalAlignment="Right" Width="192" FontWeight="Bold"/>
 
-        <ListBox Grid.Row="2" Margin="0,10,0,0" x:Name="lstNames" />
+        <ListBox Grid.Row="2" Margin="0,10,0,0" x:Name="lstNames" 
+                 ItemsSource="{Binding ProductList}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="1" Margin="5" Padding="5">
+                        <StackPanel>
+                            <TextBlock FontWeight="Bold" Text="{Binding Discription}" />
+                            <TextBlock Text="{Binding StartPrice}" />
+                            <TextBlock Text="{Binding StartDate}" />
+                            <TextBlock Text="{Binding Category}" />
+                            <TextBlock Text="{Binding Special_Feature}" />
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
 
+        </ListBox>
 
 
         <Grid Grid.Row="3" Margin="0,0,0,20">

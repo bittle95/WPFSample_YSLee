@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WPFSample_YSLee.Model
 {
-    class Notifier_Test : INotifyPropertyChanged
+    public class Notifier : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -23,7 +23,7 @@ namespace WPFSample_YSLee.Model
         {
             if (PropertyChanged != null)
             {
-                PropertyChanged(this, propertyChangedEventArgs);
+                PropertyChanged?.Invoke(this, propertyChangedEventArgs);
             }
         }
     }

@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace WPFSample_YSLee.Model
 {
-    class ViewModel_Test : Notifier_Test
+    public class ViewModel : Notifier
     {
         string discription  = "Please enter a description";
         double startPrice   = 100;
@@ -69,6 +71,23 @@ namespace WPFSample_YSLee.Model
                 special_Features = value;
                 NotifyChanged("Special_Feature");
             }
+        }
+
+        private ObservableCollection<Products> productList = new ObservableCollection<Products>();
+        public ObservableCollection<Products> ProductList
+        {
+            get { return productList; }
+            set
+            {
+                productList = value;
+                NotifyChanged("ProductList");
+            }
+        }
+
+        public void AddProduct(Products product)
+        {
+            ProductList.Add(product);
+            NotifyChanged("ProductList"); // ObservableCollection이 업데이트되었음을 알립니다.
         }
     }
 }

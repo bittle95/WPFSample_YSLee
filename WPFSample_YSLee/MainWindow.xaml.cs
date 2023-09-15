@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFSample_YSLee.Model;
 
 namespace WPFSample_YSLee
 {
@@ -22,7 +23,8 @@ namespace WPFSample_YSLee
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            this.DataContext = new ViewModel();
         }
 
         private void NavigateToNewPage_Click(object sender, RoutedEventArgs e)
@@ -32,6 +34,7 @@ namespace WPFSample_YSLee
                 return; //여러 창이 Open 되는 것을 방지
             }
             AddProductListingView addProductListView = new AddProductListingView();
+            addProductListView.DataContext = this.DataContext; //중요
             addProductListView.Show();
         }
     }

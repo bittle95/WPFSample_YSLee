@@ -23,7 +23,7 @@ namespace WPFSample_YSLee
         public AddProductListingView()
         {
             InitializeComponent();
-            this.DataContext = new ViewModel_Test();
+            this.DataContext = new Model.ViewModel();
         }
 
         private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -51,6 +51,31 @@ namespace WPFSample_YSLee
                     default:
                         break;
                 }
+            }
+        }
+
+        private void SubmitButton_Click(object sender, RoutedEventArgs e)
+        {
+            // 현재 창의 데이터 컨텍스트를 가져옴
+            Model.ViewModel viewModel = this.DataContext as Model.ViewModel;
+
+            if (viewModel != null)
+            {
+                // 새로운 상품 생성
+                Products newProduct = new Products
+                {
+                    Discription = viewModel.Discription,
+                    StartPrice = viewModel.StartPrice,
+                    StartDate = viewModel.StartDate,
+                    Category = viewModel.Category,
+                    Special_Feature = viewModel.Special_Feature
+                };
+
+                // MainView의 ViewModel에 상품 추가
+                viewModel.AddProduct(newProduct);
+
+                // 현재 창 닫기
+                this.Close();
             }
         }
     }
