@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace WPFSample_YSLee.Model
 {
-    public class Products : Notifier
+    //AddProductListingView에서 MainView로 데이터를 내보내기 위한 클래스
+    public class Products
     {
         private string discription;
         public string Discription
@@ -15,7 +16,6 @@ namespace WPFSample_YSLee.Model
             set
             {
                 discription = value;
-                NotifyChanged("Discription");
             }
         }
 
@@ -26,7 +26,6 @@ namespace WPFSample_YSLee.Model
             set
             {
                 startPrice = value;
-                NotifyChanged("StartPrice");
             }
         }
 
@@ -37,7 +36,6 @@ namespace WPFSample_YSLee.Model
             set
             {
                 startDate = value;
-                NotifyChanged("StartDate");
             }
         }
 
@@ -48,7 +46,6 @@ namespace WPFSample_YSLee.Model
             set
             {
                 category = value;
-                NotifyChanged("Category");
             }
         }
 
@@ -59,7 +56,6 @@ namespace WPFSample_YSLee.Model
             set
             {
                 special_Feature = value;
-                NotifyChanged("Special_Feature");
             }
         }
     }

@@ -34,7 +34,8 @@
         <CheckBox Content="Sort by category and date" Grid.Row="1" HorizontalAlignment="Right" Width="192" FontWeight="Bold"/>
 
         <ListBox Grid.Row="2" Margin="0,10,0,0" x:Name="lstNames" 
-                 ItemsSource="{Binding ProductList}">
+                 ItemsSource="{Binding ProductList}"
+                 HorizontalContentAlignment="Stretch">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="Black" BorderThickness="1" Margin="5" Padding="5">
@@ -48,7 +49,6 @@
                     </Border>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-
         </ListBox>
 
 

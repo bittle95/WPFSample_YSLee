@@ -23,7 +23,7 @@ namespace WPFSample_YSLee
         public AddProductListingView()
         {
             InitializeComponent();
-            this.DataContext = new Model.ViewModel();
+            this.DataContext = new Model.AddProductList_ViewModel();
         }
 
         private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -57,7 +57,7 @@ namespace WPFSample_YSLee
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
             // 현재 창의 데이터 컨텍스트를 가져옴
-            Model.ViewModel viewModel = this.DataContext as Model.ViewModel;
+            Model.AddProductList_ViewModel viewModel = this.DataContext as Model.AddProductList_ViewModel;
 
             if (viewModel != null)
             {

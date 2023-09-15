@@ -9,7 +9,8 @@ using System.Windows.Input;
 
 namespace WPFSample_YSLee.Model
 {
-    public class ViewModel : Notifier
+    //AddProductListingView 내에서만 바인딩하기 위한 뷰모델
+    public class AddProductList_ViewModel : Notifier
     {
         string discription  = "Please enter a description";
         double startPrice   = 100;
