@@ -74,6 +74,9 @@ namespace WPFSample_YSLee
                 // MainView의 ViewModel에 상품 추가
                 viewModel.AddProduct(newProduct);
 
+                // 데이터 초기화
+                viewModel.SetInitialProductValue();
+
                 // 현재 창 닫기
                 this.Close();
             }

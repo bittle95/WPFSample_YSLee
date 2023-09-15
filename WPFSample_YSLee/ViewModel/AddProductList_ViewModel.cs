@@ -12,11 +12,22 @@ namespace WPFSample_YSLee.Model
     //AddProductListingView 내에서만 바인딩하기 위한 뷰모델
     public class AddProductList_ViewModel : Notifier
     {
-        string discription  = "Please enter a description";
-        double startPrice   = 100;
-        string startDate    = DateTime.Now.ToString("yyyy-MM-dd");
-        string category     = "DVS's";
-        string special_Features= "None";
+        //기본 세팅 데이터
+        string discription = "Please enter a description";
+        double startPrice = 100;
+        string startDate = DateTime.Now.ToString("yyyy-MM-dd");
+        string category = "DVS's";
+        string special_Features = "None";
+
+        public void SetInitialProductValue()
+        {
+            // 기본값 설정
+            Discription = "Please enter a description";
+            StartPrice = 100;
+            StartDate = DateTime.Now.ToString("yyyy-MM-dd");
+            Category = "DVS's";
+            Special_Feature = "None";
+        }
 
         public string Discription
         {

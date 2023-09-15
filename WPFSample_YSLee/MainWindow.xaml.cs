@@ -37,5 +37,19 @@ namespace WPFSample_YSLee
             addProductListView.DataContext = this.DataContext; //중요
             addProductListView.Show();
         }
+
+        // 선택된 List 아이템의 속성 값들을 MainView의 TextBlock들에 할당 기능
+        private void lstNames_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (lstNames.SelectedItem != null)
+            {
+                Products selectedProduct = (Products)lstNames.SelectedItem;
+                txtDescription.Text = selectedProduct.Discription;
+                txtStartPrice.Text = selectedProduct.StartPrice.ToString();
+                txtStartDate.Text = selectedProduct.StartDate;
+                txtCategory.Text = selectedProduct.Category;
+                txtSpecialFeature.Text = selectedProduct.Special_Feature;
+            }
+        }
     }
 }
