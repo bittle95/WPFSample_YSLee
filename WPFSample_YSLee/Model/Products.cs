@@ -80,5 +80,15 @@ namespace WPFSample_YSLee.Model
                 borderColor = value;
             }
         }
+
+        private bool isbargain;
+        public bool IsBargain
+        {
+            get { return isbargain; }
+            set
+            {
+                isbargain = value;
+            }
+        }
     }
 }

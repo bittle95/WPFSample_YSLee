@@ -12,7 +12,7 @@ using System.Windows.Media;
 namespace WPFSample_YSLee.Model
 {
     //AddProductListingView 내에서만 바인딩하기 위한 뷰모델
-    public class AddProductList_ViewModel : Notifier
+    public class ViewModel : Notifier
     {
         //기본 세팅 데이터
         string discription = "Please enter a description";
@@ -98,7 +98,6 @@ namespace WPFSample_YSLee.Model
                 NotifyChanged("Thickness");
             }
         }
-
         
         private SolidColorBrush borderColor;
         public SolidColorBrush BorderColor
@@ -108,6 +107,17 @@ namespace WPFSample_YSLee.Model
             {
                 borderColor = value; 
                 NotifyChanged("BorderColor");
+            }
+        }
+
+        private bool isbargain;
+        public bool IsBargain
+        {
+            get { return isbargain; }
+            set
+            {
+                isbargain = value; 
+                NotifyChanged("IsBargain");
             }
         }
 
@@ -122,10 +132,11 @@ namespace WPFSample_YSLee.Model
             }
         }
 
+        // ObservableCollection 업데이트
         public void AddProduct(Products product)
         {
             ProductList.Add(product);
-            NotifyChanged("ProductList"); // ObservableCollection이 업데이트
+            NotifyChanged("ProductList"); 
         }
     }
 }

@@ -74,7 +74,9 @@
                     <ComboBoxItem>Color</ComboBoxItem>
                     <ComboBoxItem>Highlight</ComboBoxItem>
                 </ComboBox>
-                <CheckBox Margin="0,4,0,4"></CheckBox>
+                
+                <CheckBox IsChecked="{Binding IsBargain, UpdateSourceTrigger=PropertyChanged}" Margin="0,4,0,4"></CheckBox>
+                
                 <Button Content="Submit" Click="SubmitButton_Click" Height="35"  FontWeight="Bold" Margin="188,4,0,4"></Button>
             </StackPanel>
         </Grid>

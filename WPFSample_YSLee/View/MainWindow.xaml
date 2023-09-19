@@ -50,6 +50,7 @@
                             <TextBlock Text="{Binding StartDate}" />
                             <TextBlock Text="{Binding Category}" />
                             <TextBlock Text="{Binding Special_Feature}" />
+                            <TextBlock Text="{Binding IsBargain}" />
                         </StackPanel>
                     </Border>
                 </DataTemplate>

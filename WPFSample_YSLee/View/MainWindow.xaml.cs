@@ -24,7 +24,7 @@ namespace WPFSample_YSLee
         public MainWindow()
         {
             InitializeComponent(); 
-            this.DataContext = new AddProductList_ViewModel();
+            this.DataContext = new ViewModel();
         }
 
         private void NavigateToNewPage_Click(object sender, RoutedEventArgs e)

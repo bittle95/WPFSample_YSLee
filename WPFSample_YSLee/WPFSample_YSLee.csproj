@@ -55,7 +55,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\BorderColorConverter.cs" />
     <Compile Include="Model\Products.cs" />
     <Compile Include="ViewModel\AddProductList_ViewModel.cs" />
     <Page Include="View\AddProductListingView.xaml">

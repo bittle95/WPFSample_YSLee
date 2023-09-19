@@ -25,7 +25,7 @@ namespace WPFSample_YSLee
         public AddProductListingView()
         {
             InitializeComponent();
-            this.DataContext = new Model.AddProductList_ViewModel();
+            this.DataContext = new Model.ViewModel();
         }
 
         private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -33,7 +33,7 @@ namespace WPFSample_YSLee
             ComboBoxItem selectedItem = (ComboBoxItem)ColorComboBox.SelectedItem;
             
             //현재 콘텍스트를 가져옴
-            Model.AddProductList_ViewModel viewModel = this.DataContext as Model.AddProductList_ViewModel;
+            Model.ViewModel viewModel = this.DataContext as Model.ViewModel;
 
             if (selectedItem != null)
             {
@@ -62,7 +62,7 @@ namespace WPFSample_YSLee
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
             // 현재 창의 데이터 컨텍스트를 가져옴
-            Model.AddProductList_ViewModel viewModel = this.DataContext as Model.AddProductList_ViewModel;
+            Model.ViewModel viewModel = this.DataContext as Model.ViewModel;
 
             if (viewModel != null)
             {
@@ -75,7 +75,8 @@ namespace WPFSample_YSLee
                     Category =          viewModel.Category,
                     Special_Feature =   viewModel.Special_Feature,
                     Thickness =         viewModel.Thickness,
-                    BorderColor =       viewModel.BorderColor
+                    BorderColor =       viewModel.BorderColor,
+                    IsBargain =         viewModel.IsBargain
                 };
 
                 // MainView의 ViewModel에 상품 추가
