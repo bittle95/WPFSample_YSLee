@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Media;
 
 namespace WPFSample_YSLee.Model
 {
@@ -56,6 +58,26 @@ namespace WPFSample_YSLee.Model
             set
             {
                 special_Feature = value;
+            }
+        }
+
+        private Thickness thickness;
+        public Thickness Thickness
+        {
+            get { return thickness; }
+            set
+            {
+                thickness = value;
+            }
+        }
+
+        private SolidColorBrush borderColor;
+        public SolidColorBrush BorderColor
+        {
+            get { return borderColor; }
+            set
+            {
+                borderColor = value;
             }
         }
     }

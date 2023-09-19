@@ -20,6 +20,8 @@ namespace WPFSample_YSLee
     /// </summary>
     public partial class AddProductListingView : Window
     {
+        int thick = 3;
+        int thin = 1;
         public AddProductListingView()
         {
             InitializeComponent();
@@ -29,6 +31,9 @@ namespace WPFSample_YSLee
         private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ComboBoxItem selectedItem = (ComboBoxItem)ColorComboBox.SelectedItem;
+            
+            //현재 콘텍스트를 가져옴
+            Model.AddProductList_ViewModel viewModel = this.DataContext as Model.AddProductList_ViewModel;
 
             if (selectedItem != null)
             {
@@ -37,16 +42,16 @@ namespace WPFSample_YSLee
                 switch (selectedValue)
                 {
                     case "None":
-                        TargetBorderName.BorderBrush = Brushes.Black;
-                        TargetBorderName.BorderThickness = new Thickness(1);
+                        viewModel.BorderColor = Brushes.Black;
+                        viewModel.Thickness = new Thickness(thin);
                         break;
                     case "Color":
-                        TargetBorderName.BorderBrush = Brushes.LightSkyBlue;
-                        TargetBorderName.BorderThickness = new Thickness(3);
+                        viewModel.BorderColor = Brushes.LightSkyBlue;
+                        viewModel.Thickness = new Thickness(thick);
                         break;
                     case "Highlight":
-                        TargetBorderName.BorderBrush = Brushes.Orange;
-                        TargetBorderName.BorderThickness = new Thickness(3);
+                        viewModel.BorderColor = Brushes.Orange;
+                        viewModel.Thickness = new Thickness(thick);
                         break;
                     default:
                         break;
@@ -64,11 +69,13 @@ namespace WPFSample_YSLee
                 // 새로운 상품 생성
                 Products newProduct = new Products
                 {
-                    Discription = viewModel.Discription,
-                    StartPrice = viewModel.StartPrice,
-                    StartDate = viewModel.StartDate,
-                    Category = viewModel.Category,
-                    Special_Feature = viewModel.Special_Feature
+                    Discription =       viewModel.Discription,
+                    StartPrice =        viewModel.StartPrice,
+                    StartDate =         viewModel.StartDate,
+                    Category =          viewModel.Category,
+                    Special_Feature =   viewModel.Special_Feature,
+                    Thickness =         viewModel.Thickness,
+                    BorderColor =       viewModel.BorderColor
                 };
 
                 // MainView의 ViewModel에 상품 추가

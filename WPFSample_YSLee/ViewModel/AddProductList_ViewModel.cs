@@ -5,7 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace WPFSample_YSLee.Model
 {
@@ -27,6 +29,7 @@ namespace WPFSample_YSLee.Model
             StartDate = DateTime.Now.ToString("yyyy-MM-dd");
             Category = "DVS's";
             Special_Feature = "None";
+            BorderColor = Brushes.Black;
         }
 
         public string Discription
@@ -59,7 +62,7 @@ namespace WPFSample_YSLee.Model
                 }
                 else
                 {
-                    Console.WriteLine("True");
+                    //Console.WriteLine("True");
                 }
                 NotifyChanged("StartPrice");
             }
@@ -82,6 +85,29 @@ namespace WPFSample_YSLee.Model
             {
                 special_Features = value;
                 NotifyChanged("Special_Feature");
+            }
+        }
+
+        private Thickness thickness;
+        public Thickness Thickness
+        {
+            get { return thickness; }
+            set
+            {
+                thickness = value;
+                NotifyChanged("Thickness");
+            }
+        }
+
+        
+        private SolidColorBrush borderColor;
+        public SolidColorBrush BorderColor
+        {
+            get { return borderColor; }
+            set
+            {
+                borderColor = value; 
+                NotifyChanged("BorderColor");
             }
         }
 

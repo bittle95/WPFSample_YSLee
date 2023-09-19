@@ -82,12 +82,10 @@
         <!-- 굵은 선 -->
         <Border Grid.Row="1" BorderThickness="0,0,0,3" BorderBrush="Black" Margin="0,5,0,80" Grid.RowSpan="2" />
 
-        <Border x:Name="TargetBorderName" Grid.Row="2" BorderBrush="Black" BorderThickness="1">
+        <Border x:Name="TargetBorderName" Grid.Row="2" BorderBrush="{Binding BorderColor}" BorderThickness="{Binding Thickness}" >
             <Border.Style>
                 <Style TargetType="Border">
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding ElementName=ColorComboBox}"></DataTrigger>
-                        <DataTrigger Binding="{Binding ElementName=ColorComboBox}"></DataTrigger>
                         <DataTrigger Binding="{Binding ElementName=ColorComboBox}"></DataTrigger>
                     </Style.Triggers>
                 </Style>
