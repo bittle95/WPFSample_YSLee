@@ -56,7 +56,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\Products.cs" />
-    <Compile Include="ViewModel\AddProductList_ViewModel.cs" />
     <Page Include="View\AddProductListingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -65,6 +64,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="ViewModel\ViewModel.cs" />
     <Compile Include="View\AddProductListingView.xaml.cs">
       <DependentUpon>AddProductListingView.xaml</DependentUpon>
     </Compile>
