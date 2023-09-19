@@ -19,9 +19,9 @@ namespace WPFSample_YSLee.Model
         string category = "DVS's";
         string special_Features = "None";
 
+        //새 창을 켤때마다 초기화
         public void SetInitialProductValue()
         {
-            // 기본값 설정
             Discription = "Please enter a description";
             StartPrice = 100;
             StartDate = DateTime.Now.ToString("yyyy-MM-dd");
@@ -99,7 +99,7 @@ namespace WPFSample_YSLee.Model
         public void AddProduct(Products product)
         {
             ProductList.Add(product);
-            NotifyChanged("ProductList"); // ObservableCollection이 업데이트되었음을 알립니다.
+            NotifyChanged("ProductList"); // ObservableCollection이 업데이트
         }
     }
 }
