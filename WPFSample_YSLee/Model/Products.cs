@@ -11,6 +11,18 @@ namespace WPFSample_YSLee.Model
     //AddProductListingView에서 MainView로 데이터를 내보내기 위한 클래스
     public class Products
     {
+        public Products(ViewModel viewModel)
+        {
+            Discription = viewModel.Discription;
+            StartPrice = viewModel.StartPrice;
+            StartDate = viewModel.StartDate;
+            Category = viewModel.Category;
+            Special_Feature = viewModel.Special_Feature;
+            Thickness = viewModel.Thickness;
+            BorderColor = viewModel.BorderColor;
+            IsBargain = viewModel.IsBargain;
+        }
+
         private string discription;
         public string Discription
         {

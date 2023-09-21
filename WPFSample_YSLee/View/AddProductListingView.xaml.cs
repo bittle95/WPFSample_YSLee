@@ -67,17 +67,7 @@ namespace WPFSample_YSLee
             if (viewModel != null)
             {
                 // 새로운 상품 생성
-                Products newProduct = new Products
-                {
-                    Discription =       viewModel.Discription,
-                    StartPrice =        viewModel.StartPrice,
-                    StartDate =         viewModel.StartDate,
-                    Category =          viewModel.Category,
-                    Special_Feature =   viewModel.Special_Feature,
-                    Thickness =         viewModel.Thickness,
-                    BorderColor =       viewModel.BorderColor,
-                    IsBargain =         viewModel.IsBargain
-                };
+                Products newProduct = new Products(viewModel);
 
                 // MainView의 ViewModel에 상품 추가
                 viewModel.AddProduct(newProduct);
