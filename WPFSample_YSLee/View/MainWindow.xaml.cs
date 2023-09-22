@@ -54,5 +54,17 @@ namespace WPFSample_YSLee
                 txtMemberSince.Text = selectedProduct.MemberSince;
             }
         }
+        ICollectionView collectionView = null;
+
+        private void GroupByCategoryCheckbox_Checked(object sender, RoutedEventArgs e)
+        {
+            ViewModel viewModel = (ViewModel)this.DataContext;
+
+            collectionView = CollectionViewSource.GetDefaultView(viewModel.ProductList);
+            collectionView.GroupDescriptions.Add(new PropertyGroupDescription("Category"));
+
+            // ListBox에 ICollectionView를 바인딩
+            lstNames.ItemsSource = collectionView;
+        }
     }
 }

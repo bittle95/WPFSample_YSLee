@@ -16,6 +16,13 @@ namespace WPFSample_YSLee.Model
     //AddProductListingView 내에서만 바인딩하기 위한 뷰모델
     public class ViewModel : Notifier
     {
+        private ObservableCollection<Products> productList;
+        public ViewModel()
+        {
+            ProductList = new ObservableCollection<Products>();
+        }
+
+
         //기본 세팅 데이터
         string discription = "Please enter a description";
         double startPrice = 100;
@@ -28,7 +35,7 @@ namespace WPFSample_YSLee.Model
         double ownersRating = 15;
         string memberSince = "2023.10.23";
         string ownersName = "Young Seung";
-        string imagPath = "C:\\Personal\\WPFSample_YSLee\\WPFSample_YSLee\\Resource\\Star.png";
+        //string imagPath = "";
 
         //새 창을 켤때마다 초기화
         public void SetInitialProductValue()
@@ -44,7 +51,7 @@ namespace WPFSample_YSLee.Model
             OwnersRating = 15;
             MemberSince = "2023.10.23";
             OwnersName = "Young Seung";
-            ImagePath = "";
+            //ImagePath = "";
         }
 
         public string Discription
@@ -161,17 +168,16 @@ namespace WPFSample_YSLee.Model
                 ownersName = value;
             }
         }
-        public string ImagePath
-        {
-            get { return imagPath; }
-            set
-            {
-                imagPath = value;
-                NotifyChanged("ImagePath");
-            }
-        }
+        //public string ImagePath
+        //{
+        //    get { return imagPath; }
+        //    set
+        //    {
+        //        imagPath = value;
+        //        NotifyChanged("ImagePath");
+        //    }
+        //}
 
-        private ObservableCollection<Products> productList = new ObservableCollection<Products>();
         public ObservableCollection<Products> ProductList
         {
             get { return productList; }

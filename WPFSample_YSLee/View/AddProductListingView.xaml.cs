@@ -44,22 +44,19 @@ namespace WPFSample_YSLee
                     case "None":
                         viewModel.BorderColor = Brushes.Black;
                         viewModel.Thickness = new Thickness(thin);
-                        viewModel.ImagePath = "";
+                        //viewModel.ImagePath = "";
                         break;
                     case "Color":
                         viewModel.BorderColor = Brushes.LightSkyBlue;
                         viewModel.Thickness = new Thickness(thick);
-                        viewModel.ImagePath = "";
+                        //viewModel.ImagePath = "";
                         break;
                     case "Highlight":
                         viewModel.BorderColor = Brushes.Orange;
                         viewModel.Thickness = new Thickness(thick);
-                        var basePath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName;
-                        var imagePath = Path.Combine(basePath, "Resource", "Star.png");
-                        Console.WriteLine("basePath"+basePath);
-
-                        viewModel.ImagePath = imagePath;
-                        //viewModel.ImagePath = "C:\\Personal\\WPFSample_YSLee\\WPFSample_YSLee\\Resource\\Star.png";
+                        //var basePath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName;
+                        //var imagePath = Path.Combine(basePath, "Resource", "Star.png");
+                        //viewModel.ImagePath = imagePath;
                         break;
                     default:
                         break;
