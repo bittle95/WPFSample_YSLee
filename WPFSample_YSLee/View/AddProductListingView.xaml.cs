@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using WPFSample_YSLee.Model;
 
 namespace WPFSample_YSLee
@@ -54,7 +54,12 @@ namespace WPFSample_YSLee
                     case "Highlight":
                         viewModel.BorderColor = Brushes.Orange;
                         viewModel.Thickness = new Thickness(thick);
-                        viewModel.ImagePath = "C:\\Personal\\WPFSample_YSLee\\WPFSample_YSLee\\Resource\\Star.png";
+                        var basePath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName;
+                        var imagePath = Path.Combine(basePath, "Resource", "Star.png");
+                        Console.WriteLine("basePath"+basePath);
+
+                        viewModel.ImagePath = imagePath;
+                        //viewModel.ImagePath = "C:\\Personal\\WPFSample_YSLee\\WPFSample_YSLee\\Resource\\Star.png";
                         break;
                     default:
                         break;
