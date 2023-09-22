@@ -31,7 +31,7 @@ namespace WPFSample_YSLee
         private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ComboBoxItem selectedItem = (ComboBoxItem)ColorComboBox.SelectedItem;
-            
+
             //현재 콘텍스트를 가져옴
             Model.ViewModel viewModel = this.DataContext as Model.ViewModel;
 
@@ -44,20 +44,24 @@ namespace WPFSample_YSLee
                     case "None":
                         viewModel.BorderColor = Brushes.Black;
                         viewModel.Thickness = new Thickness(thin);
+                        viewModel.ImagePath = "";
                         break;
                     case "Color":
                         viewModel.BorderColor = Brushes.LightSkyBlue;
                         viewModel.Thickness = new Thickness(thick);
+                        viewModel.ImagePath = "";
                         break;
                     case "Highlight":
                         viewModel.BorderColor = Brushes.Orange;
                         viewModel.Thickness = new Thickness(thick);
+                        viewModel.ImagePath = "C:\\Personal\\WPFSample_YSLee\\WPFSample_YSLee\\Resource\\Star.png";
                         break;
                     default:
                         break;
                 }
             }
         }
+
 
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {

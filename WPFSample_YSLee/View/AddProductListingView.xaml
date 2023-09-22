@@ -74,9 +74,9 @@
                     <ComboBoxItem>Color</ComboBoxItem>
                     <ComboBoxItem>Highlight</ComboBoxItem>
                 </ComboBox>
-                
+
                 <CheckBox IsChecked="{Binding IsBargain, UpdateSourceTrigger=PropertyChanged}" Margin="0,4,0,4"></CheckBox>
-                
+
                 <Button Content="Submit" Click="SubmitButton_Click" Height="35"  FontWeight="Bold" Margin="188,4,0,4"></Button>
             </StackPanel>
         </Grid>
@@ -93,28 +93,29 @@
                 </Style>
             </Border.Style>
 
-            <Grid Grid.Row="2" Margin="0,0,0,-1">
+            <Grid Grid.Row="3" Margin="0,0,0,-1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="4*" />
                 </Grid.ColumnDefinitions>
-
-                <StackPanel Grid.Column="0" Margin="0,5,0,0">
+                <Image Grid.Column="0" Source="{Binding ImagePath}" Width="20" Height="20" />
+                <StackPanel Grid.Column="1" Margin="0,5,0,0">
                     <StackPanel.Resources>
                         <Style TargetType="TextBlock">
                             <Setter Property="HorizontalAlignment" Value="Right" />
                         </Style>
                     </StackPanel.Resources>
-                    <TextBlock Text="Description :" Grid.Column="1" Margin="5"  FontWeight="Bold"/>
-                    <TextBlock Text="Current Price :" Grid.Column="1" Margin="5"  FontWeight="Bold"/>
+                    <TextBlock Text="Description :"   Margin="5" FontWeight="Bold"/>
+                    <TextBlock Text="Current Price :" Margin="5" FontWeight="Bold"/>
                 </StackPanel>
 
-                <StackPanel Grid.Column="1" Margin="0,5,0,0">
-                    <TextBlock Text="{Binding Discription, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,3" Height="18"></TextBlock>
-                    <TextBlock Text="{Binding StartPrice, UpdateSourceTrigger=PropertyChanged}"  Margin="0,5,0,3" Height="18"></TextBlock>
+                <StackPanel Grid.Column="2" Margin="0,5,0,0">
+                    <TextBlock Text="{Binding Discription,  UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,3" Height="18"></TextBlock>
+                    <TextBlock Text="{Binding StartPrice,   UpdateSourceTrigger=PropertyChanged}"  Margin="0,5,0,3" Height="18"></TextBlock>
                 </StackPanel>
             </Grid>
         </Border>
@@ -140,15 +141,17 @@
                 <TextBlock Text="Category :"         Grid.Column="1" Margin="5"  FontWeight="Bold"/>
                 <TextBlock Text="Owner's name :"     Grid.Column="1" Margin="5"  FontWeight="Bold"/>
                 <TextBlock Text="Owner's rating :"   Grid.Column="1" Margin="5"  FontWeight="Bold"/>
+                <TextBlock Text="Member Since :"     Grid.Column="1" Margin="5"  FontWeight="Bold"/>
             </StackPanel>
 
             <StackPanel Grid.Column="1" Margin="0,5,0,0">
-                <TextBlock Text="{Binding Discription, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,3" Height="18"></TextBlock>
-                <TextBlock Text="{Binding StartPrice, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,3" Height="18"> </TextBlock>
-                <TextBlock Text="{Binding StartDate, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,3" Height="18"></TextBlock>
-                <TextBlock Text="{Binding Category, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,3" Height="18"></TextBlock>
-                <TextBlock Margin="0,5,0,3" Height="18"></TextBlock>
-                <TextBlock Margin="0,5,0,3" Height="18"></TextBlock>
+                <TextBlock Text="{Binding Discription,  UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,3" Height="18"></TextBlock>
+                <TextBlock Text="{Binding StartPrice,   UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,3" Height="18"></TextBlock>
+                <TextBlock Text="{Binding StartDate,    UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,3" Height="18"></TextBlock>
+                <TextBlock Text="{Binding Category,     UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,3" Height="18"></TextBlock>
+                <TextBlock Text="{Binding OwnersName,   UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,3" Height="18"></TextBlock>
+                <TextBlock Text="{Binding OwnersRating, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,3" Height="18"></TextBlock>
+                <TextBlock Text="{Binding MemberSince,  UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,3" Height="18"></TextBlock>
             </StackPanel>
         </Grid>
     </Grid>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,23 +24,23 @@ namespace WPFSample_YSLee
     {
         public MainWindow()
         {
-            InitializeComponent(); 
+            InitializeComponent();
             this.DataContext = new ViewModel();
         }
 
-        private void NavigateToNewPage_Click(object sender, RoutedEventArgs e)
+        private void NavigateToNewPage(object sender, RoutedEventArgs e)
         {
             if (Application.Current.Windows.OfType<AddProductListingView>().Any())
             {
                 return; //여러 창이 Open 되는 것을 방지
             }
             AddProductListingView addProductListView = new AddProductListingView();
-            addProductListView.DataContext = this.DataContext; //중요
+            addProductListView.DataContext = this.DataContext; //addProductList View로 콘텍스트 전달
             addProductListView.Show();
         }
 
         // 선택된 List 아이템의 속성 값들을 MainView의 TextBlock들에 할당 기능
-        private void lstNames_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void lstNamesSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (lstNames.SelectedItem != null)
             {
@@ -48,7 +49,9 @@ namespace WPFSample_YSLee
                 txtStartPrice.Text = selectedProduct.StartPrice.ToString();
                 txtStartDate.Text = selectedProduct.StartDate;
                 txtCategory.Text = selectedProduct.Category;
-                txtSpecialFeature.Text = selectedProduct.Special_Feature;
+                txtOwnersName.Text = selectedProduct.OwnersName;
+                txtOwnerRating.Text = selectedProduct.OwnersRating.ToString();
+                txtMemberSince.Text = selectedProduct.MemberSince;
             }
         }
     }

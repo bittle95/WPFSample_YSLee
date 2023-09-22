@@ -11,7 +11,7 @@ namespace WPFSample_YSLee.Model
     //AddProductListingView에서 MainView로 데이터를 내보내기 위한 클래스
     public class Products
     {
-        public Products(ViewModel viewModel)
+        public Products(Model.ViewModel viewModel)
         {
             Discription = viewModel.Discription;
             StartPrice = viewModel.StartPrice;
@@ -21,8 +21,11 @@ namespace WPFSample_YSLee.Model
             Thickness = viewModel.Thickness;
             BorderColor = viewModel.BorderColor;
             IsBargain = viewModel.IsBargain;
+            MemberSince = viewModel.MemberSince;
+            OwnersName = viewModel.OwnersName;
+            OwnersRating = viewModel.OwnersRating;
+            ImagePath = viewModel.ImagePath;
         }
-
         private string discription;
         public string Discription
         {
@@ -100,6 +103,46 @@ namespace WPFSample_YSLee.Model
             set
             {
                 isbargain = value;
+            }
+        }
+
+        private double ownersRating;
+        public double OwnersRating
+        {
+            get { return ownersRating; }
+            set
+            {
+                ownersRating = value;
+            }
+        }
+
+        private string memberSince;
+        public string MemberSince
+        {
+            get { return memberSince; }
+            set
+            {
+                memberSince = value;
+            }
+        }
+
+        private string ownersName;
+        public string OwnersName
+        {
+            get { return ownersName; }
+            set
+            {
+                ownersName = value;
+            }
+        }
+
+        private string imagePath;
+        public string ImagePath
+        {
+            get { return imagePath; }
+            set
+            {
+                imagePath = value;
             }
         }
     }
