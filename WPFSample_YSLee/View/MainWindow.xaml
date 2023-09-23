@@ -32,7 +32,7 @@
             </Label.Style>
         </Label>
 
-        <CheckBox x:Name="GroupByCategoryCheckbox" Checked="GroupByCategoryCheckbox_Checked" Unchecked="GroupByCategoryCheckbox_Checked"
+        <CheckBox x:Name="GroupByCategoryCheckbox" Checked="GroupByCategory" Unchecked="GroupByCategory"
             Content="Group by cetegory" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Width="163" FontWeight="Bold"/>
         <CheckBox Content="Show only bargains" Grid.Row="1" HorizontalAlignment="Center" Margin="200,0,196,0" Width="178" FontWeight="Bold"/>
         <CheckBox Content="Sort by category and date" Grid.Row="1" HorizontalAlignment="Right" Width="192" FontWeight="Bold"/>

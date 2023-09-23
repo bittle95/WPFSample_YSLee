@@ -56,13 +56,20 @@ namespace WPFSample_YSLee
         }
         ICollectionView collectionView = null;
 
-        private void GroupByCategoryCheckbox_Checked(object sender, RoutedEventArgs e)
+        private void GroupByCategory(object sender, RoutedEventArgs e)
         {
             ViewModel viewModel = (ViewModel)this.DataContext;
 
-            collectionView = CollectionViewSource.GetDefaultView(viewModel.ProductList);
-            collectionView.GroupDescriptions.Add(new PropertyGroupDescription("Category"));
-
+            if(GroupByCategoryCheckbox.IsChecked == true)
+            {
+                collectionView = CollectionViewSource.GetDefaultView(viewModel.ProductList);
+                collectionView.GroupDescriptions.Add(new PropertyGroupDescription("Category"));
+            }
+            else
+            {
+                collectionView = CollectionViewSource.GetDefaultView(viewModel.ProductList);
+                collectionView.GroupDescriptions.Clear();
+            }
             // ListBox에 ICollectionView를 바인딩
             lstNames.ItemsSource = collectionView;
         }

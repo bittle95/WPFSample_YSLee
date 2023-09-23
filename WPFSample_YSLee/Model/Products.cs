@@ -24,7 +24,7 @@ namespace WPFSample_YSLee.Model
             MemberSince = viewModel.MemberSince;
             OwnersName = viewModel.OwnersName;
             OwnersRating = viewModel.OwnersRating;
-            //ImagePath = viewModel.ImagePath;
+            ImagePath = viewModel.ImagePath;
         }
         private string discription;
         public string Discription
@@ -136,14 +136,14 @@ namespace WPFSample_YSLee.Model
             }
         }
 
-        //private string imagePath;
-        //public string ImagePath
-        //{
-        //    get { return imagePath; }
-        //    set
-        //    {
-        //        imagePath = value;
-        //    }
-        //}
+        private string imagePath;
+        public string ImagePath
+        {
+            get { return imagePath; }
+            set
+            {
+                imagePath = value;
+            }
+        }
     }
 }

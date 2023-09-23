@@ -35,7 +35,7 @@ namespace WPFSample_YSLee.Model
         double ownersRating = 15;
         string memberSince = "2023.10.23";
         string ownersName = "Young Seung";
-        //string imagPath = "";
+        string imagPath = "";
 
         //새 창을 켤때마다 초기화
         public void SetInitialProductValue()
@@ -168,15 +168,15 @@ namespace WPFSample_YSLee.Model
                 ownersName = value;
             }
         }
-        //public string ImagePath
-        //{
-        //    get { return imagPath; }
-        //    set
-        //    {
-        //        imagPath = value;
-        //        NotifyChanged("ImagePath");
-        //    }
-        //}
+        public string ImagePath
+        {
+            get { return imagPath; }
+            set
+            {
+                imagPath = value;
+                NotifyChanged("ImagePath");
+            }
+        }
 
         public ObservableCollection<Products> ProductList
         {
