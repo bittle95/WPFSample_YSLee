@@ -73,5 +73,28 @@ namespace WPFSample_YSLee
             // ListBox에 ICollectionView를 바인딩
             lstNames.ItemsSource = collectionView;
         }
+
+        private void ShowBargain(object sender, RoutedEventArgs e)
+        {
+            ViewModel viewModel = (ViewModel)this.DataContext;
+            collectionView = CollectionViewSource.GetDefaultView(viewModel.ProductList);
+            if(collectionView== null)
+            {
+                return;
+            }
+            if (ShowBargainCheckBox.IsChecked == true)
+            {
+                collectionView.Filter = item =>
+                {
+                    Products product = item as Products;
+                    return product != null && product.IsBargain;
+                };
+            }
+
+            else
+            {
+                collectionView.Filter = null;
+            }
+        }
     }
 }
