@@ -32,7 +32,6 @@ C:\Personal\WPFSample_YSLee\WPFSample_YSLee\obj\Debug\WPFSample_YSLee.pdb
 D:\Curexo\WPFSample_YSLee\WPFSample_YSLee\bin\Debug\WPFSample_YSLee.exe.config
 D:\Curexo\WPFSample_YSLee\WPFSample_YSLee\bin\Debug\WPFSample_YSLee.exe
 D:\Curexo\WPFSample_YSLee\WPFSample_YSLee\bin\Debug\WPFSample_YSLee.pdb
-D:\Curexo\WPFSample_YSLee\WPFSample_YSLee\obj\Debug\WPFSample_YSLee.csproj.AssemblyReference.cache
 D:\Curexo\WPFSample_YSLee\WPFSample_YSLee\obj\Debug\View\AddProductListingView.g.cs
 D:\Curexo\WPFSample_YSLee\WPFSample_YSLee\obj\Debug\View\MainWindow.g.cs
 D:\Curexo\WPFSample_YSLee\WPFSample_YSLee\obj\Debug\App.g.cs

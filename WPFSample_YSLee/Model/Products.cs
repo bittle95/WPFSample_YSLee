@@ -145,5 +145,6 @@ namespace WPFSample_YSLee.Model
                 imagePath = value;
             }
         }
+        public List<AuctionPerson> autionPerson;
     }
 }

@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPFSample_YSLee.Model;
+using static WPFSample_YSLee.Model.Products;
 
 namespace WPFSample_YSLee
 {
@@ -52,6 +53,12 @@ namespace WPFSample_YSLee
                 txtOwnersName.Text = selectedProduct.OwnersName;
                 txtOwnerRating.Text = selectedProduct.OwnersRating.ToString();
                 txtMemberSince.Text = selectedProduct.MemberSince;
+
+                lstAuction.ItemsSource = new List<AuctionPerson>()
+                {
+                    new AuctionPerson { AucName = "James", AucPrice = 200.ToString() },
+                    new AuctionPerson { AucName = "John", AucPrice = 201.ToString() }
+                };
             }
         }
         ICollectionView collectionView = null;
