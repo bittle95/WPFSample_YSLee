@@ -96,5 +96,24 @@ namespace WPFSample_YSLee
                 collectionView.Filter = null;
             }
         }
+        private void SortByCategoryandDate(object sender, RoutedEventArgs e)
+        {
+            ViewModel viewModel = (ViewModel)this.DataContext;
+            collectionView = CollectionViewSource.GetDefaultView(viewModel.ProductList);
+            if (collectionView == null)
+            {
+                return;
+            }
+            if (SortByCategoryandDateCheckbox.IsChecked == true)
+            {
+                collectionView.SortDescriptions.Clear();
+                collectionView.SortDescriptions.Add(new SortDescription("Category", ListSortDirection.Ascending));
+                collectionView.SortDescriptions.Add(new SortDescription("StartDate", ListSortDirection.Ascending));
+            }
+            else
+            {
+                collectionView.SortDescriptions.Clear();
+            }
+        }
     }
 }

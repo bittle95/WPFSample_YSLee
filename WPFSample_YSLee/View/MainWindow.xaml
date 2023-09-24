@@ -36,7 +36,8 @@
             Content="Group by cetegory" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Width="163" FontWeight="Bold"/>
         <CheckBox x:Name="ShowBargainCheckBox" Checked="ShowBargain" Unchecked="ShowBargain"
             Content="Show only bargains" Grid.Row="1" HorizontalAlignment="Center" Margin="200,0,196,0" Width="178" FontWeight="Bold"/>
-        <CheckBox Content="Sort by category and date" Grid.Row="1" HorizontalAlignment="Right" Width="192" FontWeight="Bold"/>
+        <CheckBox x:Name="SortByCategoryandDateCheckbox" Checked="SortByCategoryandDate" Unchecked="SortByCategoryandDate"
+            Content="Sort by category and date" Grid.Row="1" HorizontalAlignment="Right" Width="192" FontWeight="Bold"/>
 
         <ListBox Grid.Row="2" Margin="0,10,0,0" x:Name="lstNames" 
                  ItemsSource="{Binding ProductList}"
